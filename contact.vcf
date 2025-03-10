@@ -7,7 +7,8 @@ TITLE:Business Contact
 TEL;WORK;VOICE:+97142721516
 TEL;CELL;VOICE:+971502878964
 EMAIL:info@bestluxury.properties
-URL:https://bestluxury.properties
+URL;TYPE=Website:https://bestluxury.properties
+URL;TYPE=WhatsApp:https://wa.me/971502878964
 ADR:;;Onyx Tower, The Greens;Dubai;;United Arab Emirates
 PHOTO;ENCODING=b;TYPE=JPEG:https://yourwebsite.com/logo.jpg
 END:VCARD
