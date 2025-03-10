@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Contact</title>
+    <script>
+        window.onload = function() {
+            window.location.href = "./contact.vcf"; // Change this to your hosted vCard URL
+        };
+    </script>
 </head>
 <body>
-    <h2>Scan the QR Code to Save Contact</h2>
-    <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://yourwebsite.com/contact.vcf" alt="QR Code to Save Contact"> -->
-    <p><a href="./contact.vcf">Click here</a> if the QR code doesn't work.</p>
+    <h2>Saving Contact...</h2>
+    <p>If the download doesn't start automatically, <a href="./contact.vcf" download>click here</a> to save the contact.</p>
 </body>
 </html>
