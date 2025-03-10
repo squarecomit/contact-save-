@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Contact...</title>
+    <script>
+        function saveContact() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            
+            if (userAgent.includes("android")) {
+                // Try to open contacts app on Android
+                window.location.href = "content://com.android.contacts/contacts/as_vcard";
+            } else {
+                // Download VCF file for other devices
+                const link = document.createElement('a');
+                link.href = './contact.vcf';
+                link.download = 'contact.vcf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+        window.onload = saveContact;
+    </script>
+</head>
+<body>
+    <p>If the contact doesn’t save automatically, <a href="./contact.vcf" download>click here</a> to add it manually.</p>
+</body>
+</html>
