@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save Contact</title>
-</head>
-<body>
-    <h2>Saving Contact...</h2>
-    <p>If the contact doesn’t open automatically, <a href="./contact.vcf" download>click here</a> to add it manually.</p>
+    <title>Downloading Contact...</title>
     <script>
-        setTimeout(() => {
+        window.onload = function() {
             const link = document.createElement('a');
-            link.href = './contact.vcf';
-            link.download = 'contact.vcf';
+            link.href = './contact.vcf'; // Ensure this file exists in the same directory
+            link.download = 'contact.vcf'; // Force download
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        }, 1000);
+        };
     </script>
+</head>
+<body>
 </body>
 </html>
