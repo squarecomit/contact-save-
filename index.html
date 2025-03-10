@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save Contact</title>
-    <script>
-        window.onload = function() {
-            window.location.href = "./contact.vcf"; // Change this to your hosted vCard URL
-        };
-    </script>
+    <title>Convert Image to Base64</title>
 </head>
 <body>
-    <h2>Saving Contact...</h2>
-    <p>If the download doesn't start automatically, <a href="./contact.vcf" download>click here</a> to save the contact.</p>
+    <input type="file" id="fileInput" />
+    <br><br>
+    <img id="outputImage" width="300" />
+    <br><br>
+    <textarea id="base64Output" rows="10" cols="50"></textarea>
+
+    <script>
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                const base64String = reader.result.split(",")[1]; // Get only Base64 data
+                document.getElementById("base64Output").value = base64String;
+                document.getElementById("outputImage").src = reader.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
