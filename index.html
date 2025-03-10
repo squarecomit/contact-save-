@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert Image to Base64</title>
+    <title>Save Contact</title>
+    <script>
+        function downloadVCard() {
+            const vcfLink = document.createElement("a");
+            vcfLink.href = "./contact.vcf"; // Change to the actual hosted vCard URL
+            vcfLink.download = "contact.vcf";
+            document.body.appendChild(vcfLink);
+            vcfLink.click();
+            document.body.removeChild(vcfLink);
+            
+            // Auto-close the window after a delay
+            setTimeout(() => {
+                window.close();
+            }, 2000); // Adjust time if needed
+        }
+
+        window.onload = function() {
+            downloadVCard();
+        };
+    </script>
 </head>
 <body>
-    <input type="file" id="fileInput" />
-    <br><br>
-    <img id="outputImage" width="300" />
-    <br><br>
-    <textarea id="base64Output" rows="10" cols="50"></textarea>
-
-    <script>
-        document.getElementById("fileInput").addEventListener("change", function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onloadend = function() {
-                const base64String = reader.result.split(",")[1]; // Get only Base64 data
-                document.getElementById("base64Output").value = base64String;
-                document.getElementById("outputImage").src = reader.result;
-            };
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <h2>Saving Contact...</h2>
+    <p>If the download doesn't start automatically, <a href="./contact.vcf" download>click here</a> to save the contact.</p>
 </body>
 </html>
