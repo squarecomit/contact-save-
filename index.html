@@ -6,25 +6,15 @@
     <title>Save Contact</title>
     <script>
         function openVCard() {
-            const vcfUrl = "./contact.vcf"; // Replace with actual hosted vCard URL
+            const vcfUrl = "./contact.vcf"; // Change to the actual vCard URL
 
-            // For iOS (opens directly in the Contacts app)
-            if (navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome")) {
-                window.location.href = vcfUrl;
-            } else {
-                // For other browsers (force download)
-                const vcfLink = document.createElement("a");
-                vcfLink.href = vcfUrl;
-                vcfLink.setAttribute("download", "contact.vcf");
-                document.body.appendChild(vcfLink);
-                vcfLink.click();
-                document.body.removeChild(vcfLink);
-            }
+            // Open vCard file directly (best for iOS Safari)
+            window.location.href = vcfUrl;
 
-            // Auto-close window after a short delay
+            // Auto-close window after a short delay (for browsers that support it)
             setTimeout(() => {
                 window.close();
-            }, 2000);
+            }, 3000);
         }
 
         window.onload = function() {
@@ -34,6 +24,6 @@
 </head>
 <body>
     <h2>Saving Contact...</h2>
-    <p>If the download doesn’t start automatically, <a href="./contact.vcf">click here</a> to save the contact.</p>
+    <p>If the contact doesn’t open automatically, <a href="./contact.vcf">click here</a> to add it manually.</p>
 </body>
 </html>
