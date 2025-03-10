@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Contact</title>
-    <script>
-        window.onload = function() {
-            window.location.replace("./contact.vcf"); // Directly opens the vCard without delay
-        };
-    </script>
 </head>
 <body>
     <h2>Saving Contact...</h2>
-    <p>If the contact doesn’t open automatically, <a href="./contact.vcf">click here</a> to add it manually.</p>
+    <p>If the contact doesn’t open automatically, <a href="./contact.vcf" download>click here</a> to add it manually.</p>
+    <script>
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = './contact.vcf';
+            link.download = 'contact.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }, 1000);
+    </script>
 </body>
 </html>
