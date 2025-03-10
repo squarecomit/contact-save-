@@ -1,12 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
-N: Penders;Guy;;;
-FN: Guy Penders
-ORG: Best Luxury Properties
-TITLE: Business Contact
+N:Penders;Guy;;;
+FN:Guy Penders
+ORG:Best Luxury Properties
+TITLE:Business Contact
 TEL;WORK;VOICE:+97142721516
 TEL;CELL;VOICE:+971502878964
-EMAIL: info@bestluxury.properties
-URL: https://bestluxury.properties
+EMAIL:info@bestluxury.properties
+URL:https://bestluxury.properties
 ADR:;;Onyx Tower, The Greens;Dubai;;United Arab Emirates
+PHOTO;TYPE=JPEG;VALUE=URI:https://res.cloudinary.com/dup6tf2ov/image/upload/v1741602476/logo-pro_mize0g.png
 END:VCARD
