@@ -6,12 +6,12 @@
     <title>Save Contact</title>
     <script>
         window.onload = function() {
-            window.location.href = "./contact.vcf"; // Change this to your hosted vCard URL
+            window.location.replace("./contact.vcf"); // Directly opens the vCard without delay
         };
     </script>
 </head>
 <body>
     <h2>Saving Contact...</h2>
-    <p>If the download doesn't start automatically, <a href="./contact.vcf" download>click here</a> to save the contact.</p>
+    <p>If the contact doesn’t open automatically, <a href="./contact.vcf">click here</a> to add it manually.</p>
 </body>
 </html>
